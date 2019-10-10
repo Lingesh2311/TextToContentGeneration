@@ -225,7 +225,7 @@ def train():
         total_loss += raw_loss.data
         optimizer.param_groups[0]['lr'] = lr2
         print(f"Log interval for the batch: {args.log_interval} First: {batch%args.log_interval}")
-        if batch < len(train_data) // args.bptt and batch > 0:
+        if batch%args.log_interval == 0 and batch > 0:
             cur_loss = total_loss.item() / args.log_interval
             elapsed = time.time() - start_time
             print('| epoch {:3d} | {:5d}/{:5d} batches | lr {:05.5f} | ms/batch {:5.2f} | '
