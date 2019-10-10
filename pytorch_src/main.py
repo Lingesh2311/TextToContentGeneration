@@ -59,9 +59,9 @@ parser.add_argument('--cuda', action='store_true',
 parser.add_argument('--log-interval', type=int, default=1, metavar='N',
                     help='report interval')
 randomhash = ''.join(str(time.time()).split('.'))
-parser.add_argument('--save', type=str,  default=randomhash+'.pt',
+parser.add_argument('--save', type=str,  default='model.pt',
                     help='path to save the final model to')
-parser.add_argument('--load', type=str,  default=randomhash+'.pt',
+parser.add_argument('--load', type=str,  default='model.pt',
                     help='path to load the final model from')
 parser.add_argument('--alpha', type=float, default=2,
                     help='alpha L2 regularization on RNN activation (alpha = 0 means no regularization)')
