@@ -85,7 +85,7 @@ if __name__ == '__main__':
     print('Testing WeightDrop with LSTM')
 
     wdrnn = WeightDrop(torch.nn.LSTM(10, 10), ['weight_hh_l0'], dropout=0.9)
-    wdrnn.cuda()
+    # wdrnn.cuda()
 
     run1 = [x.sum() for x in wdrnn(x, h0)[0].data]
     run2 = [x.sum() for x in wdrnn(x, h0)[0].data]
